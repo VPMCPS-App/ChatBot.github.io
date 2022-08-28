@@ -4,15 +4,15 @@
     <title>ChatBot</title>
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 </head>
-<body style="background-color:rgb(27, 9, 23)" text="white"> 
+<body background="bg.jpg" text="black"> 
     <font face = "Arial Black" size = "7"><center><b><i><h1>Hi, I am Vidya</h1></h1></i></b></font></center>
     <center><p><i><font face = "Arial" size = "5">You can ask me anything!</font></i></p></center><br /><br />
     <center>
     <input type="text" id="question" name="question" /> <br /><br />
     <input type="button" id="askBtn" value="Ask" /><br /><br />
-    <font size = "6">
+    <font size = "6"><b>
     <p id="result"></p><br /><br />
-    </center></font>
+    </center></font></b>
     <py-script>
         import re
         from js import document
@@ -64,8 +64,8 @@
             response("It is available at the bottom of the dashboard", ['contact', 'contacts', 'mail', 'number', 'address', 'school'], single_response=True)
             response("It is from 8:40 AM to 3:30 PM for classes I to VIII and its up to 4 PM for classes IX and X", ['long', 'timings', 'what', 'duration', 'when'],single_response=True)
             response("I am doing perfectly fine, is there anything I can help you with?", ['you'],single_response=True)
-            response("Kindly check the first page of the app , if there is no notification stating your query please contact the school office for external information - Contact number: 020-67506761", ['there', 'holiday', 'holidays', 'vacation'],single_response=True)
-            response("You can view the time table at the 'Timetable' section of our app", ['time', 'table', 'timetable', 'schedule'],single_response=True)
+            response("Kindly check the 'News' section of the app , if there is no notification stating your query please contact the school office for external information - Contact number: 020-67506761", ['there', 'holiday', 'holidays', 'vacation'],single_response=True)
+            response("You can view the time table at the 'News' section of our app", ['time', 'table', 'timetable', 'schedule'],single_response=True)
             response("Kindly check the 'Attendance' section  of the app to see the presence of the child", ['child', 'has', 'my', 'been'], required_words=['child'])
             
 
@@ -78,7 +78,7 @@
             inp.value = "" 
             clean_msg = re.split(r"\s+|[,;!?.-]\s*", user_message.lower())  
             response = read_all_messages(clean_msg)
-            pyscript.write("result", "Helper Bot: " + response)
+            pyscript.write("result", "Vidya: " + response)
 
         reply_proxy = create_proxy(reply)
         Ask_button = document.getElementById("askBtn")
